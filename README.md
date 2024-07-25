@@ -34,7 +34,7 @@ You need a GitHub access token to authenticate your requests. Create a token on 
 
 Set the `GITHUB_TOKEN` environment variable to your token:
 
-```bash
+```shell
 export GITHUB_TOKEN=your_token_here
 ````
 
