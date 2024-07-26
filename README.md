@@ -22,7 +22,7 @@ If you don't already have Go installed, follow the installation instructions on 
 2 Install and compile the Project
 
 ```bash
-git clone https://github.com/seu_usuario/github-cli.git
+git clone https://github.com/hebertsanto/cli.git
 cd cli
 go build -o cli
 ```
