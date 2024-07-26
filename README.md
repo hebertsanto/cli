@@ -9,6 +9,10 @@ This project is a simple but very useful tool for automating repository creation
 - Go (Golang) installed on your machine.
 - A GitHub access token with appropriate permissions.
 
+## Feature
+
+With this CLI you can automate the repository creation process, increasing the project development, as it clones the boilerplates, creates the repository, sets the main branch, and makes the first commit.
+      
 ## How to use this project
 
 ### 1. Install Go
@@ -43,13 +47,19 @@ export GITHUB_TOKEN=your_token_here
 ```shell
 echo $GITHUB_TOKEN
 ```
+6 Change variables
 
-6 If everything is ok you can start using it directly in your terminal
+Change the following variables with your github data
+
+![Captura de tela de 2024-07-26 09-00-23](https://github.com/user-attachments/assets/b996cbf7-62ce-4937-92a7-32e5eff6a38c)
+
+
+7 If everything is ok you can start using it directly in your terminal
 
 Create a repo
 
 ```shell
- cli create-repo [repo-name]
+ cli create-repo [repo-name] --type node
 ```
 
 Delete a repo
