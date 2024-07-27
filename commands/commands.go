@@ -66,7 +66,7 @@ func createRepo(repoName, projectType string) {
 
 	fmt.Printf("Repository %s created successfully\n", *repo.Name)
 
-	utils.CloneTemplateRepo(repoName, projectType)
+	utils.CloneTemplateRepo(repoName, projectType, "hebertsanto", "boilerplate-node")
 }
 
 func deleteRepo(owner, repoName string) {

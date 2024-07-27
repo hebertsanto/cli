@@ -9,12 +9,12 @@ import (
 	"path/filepath"
 )
 
-func CloneTemplateRepo(repoName, projectType string) {
+func CloneTemplateRepo(repoName, projectType, username, templateRepoName string) {
 	var templateRepo string
 
 	switch projectType {
 	case "node":
-		templateRepo = "https://github.com/hebertsanto/Gateway-Routing"
+		templateRepo = fmt.Sprintf("https://github.com/%s/%s", username, templateRepoName)
 	default:
 		fmt.Println("Unsupported project type:", projectType)
 		return
@@ -63,7 +63,7 @@ func CloneTemplateRepo(repoName, projectType string) {
 		log.Fatalf("Failed to initialize new Git repository: %v", err)
 	}
 
-	cmd = exec.Command("git", "remote", "add", "origin", "https://github.com/hebertsanto/"+repoName+".git")
+	cmd = exec.Command("git", "remote", "add", "origin", fmt.Sprintf("https://github.com/%s/%s.git", username, repoName))
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	err = cmd.Run()
@@ -79,7 +79,6 @@ func CloneTemplateRepo(repoName, projectType string) {
 		log.Fatalf("Failed to rename branch to main: %v", err)
 	}
 
-	// Add files to the new repository
 	cmd = exec.Command("git", "add", ".")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
